@@ -2,7 +2,7 @@
 
 const express = require('express')
 const { URL } = require('url')
-const contentDisposition = require('content-disposition')
+// const contentDisposition = require('content-disposition')
 const createRenderer = require('./renderer')
 
 const port = process.env.PORT || 3000
@@ -42,7 +42,7 @@ app.use(async (req, res, next) => {
           .set({
             'Content-Type': 'application/pdf',
             'Content-Length': pdf.length,
-            'Content-Disposition': contentDisposition(filename + '.pdf'),
+            // 'Content-Disposition': contentDisposition(filename + '.pdf'),
           })
           .send(pdf)
         break
